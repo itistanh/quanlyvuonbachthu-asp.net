@@ -1,0 +1,48 @@
+﻿@model PhamTheAnhKTPMK21B.Models.Habitat
+
+@{
+    ViewData["Title"] = "Habitat Details";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="bi bi-info-circle"></i> Habitat Details
+        </h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <h4 class="fw-bold text-secondary mb-3">Habitat Information</h4>
+
+            <dl class="row">
+
+                <dt class="col-sm-3 fw-semibold">@Html.DisplayNameFor(model => model.HabitatName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.HabitatName)</dd>
+
+                <dt class="col-sm-3 fw-semibold">@Html.DisplayNameFor(model => model.Climate)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Climate)</dd>
+
+                <dt class="col-sm-3 fw-semibold">@Html.DisplayNameFor(model => model.Area)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Area)</dd>
+
+            </dl>
+
+            <div class="mt-4 d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model?.HabitatId" class="btn btn-warning text-white">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-list"></i> Back to List
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

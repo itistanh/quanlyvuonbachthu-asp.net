@@ -1,0 +1,63 @@
+﻿@model PhamTheAnhKTPMK21B.Models.Animal
+
+@{
+    ViewData["Title"] = "Create Animal";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">Create New Animal</h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-action="Create">
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="AnimalName" class="form-label fw-semibold"></label>
+                    <input asp-for="AnimalName" class="form-control shadow-sm" />
+                    <span asp-validation-for="AnimalName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Species" class="form-label fw-semibold"></label>
+                    <input asp-for="Species" class="form-control shadow-sm" />
+                    <span asp-validation-for="Species" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Age" class="form-label fw-semibold"></label>
+                    <input asp-for="Age" class="form-control shadow-sm" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="HabitatId" class="form-label fw-semibold">Habitat</label>
+                    <select asp-for="HabitatId"
+                            class="form-select shadow-sm"
+                            asp-items="ViewBag.HabitatId"></select>
+                </div>
+
+                <button type="submit" class="btn btn-success px-4 shadow-sm">
+                    <i class="bi bi-check-circle"></i> Create
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

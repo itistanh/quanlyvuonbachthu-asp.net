@@ -1,0 +1,68 @@
+﻿@model PhamTheAnhKTPMK21B.Models.Animal
+
+@{
+    ViewData["Title"] = "Animal Details";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">
+            <i class="bi bi-info-circle"></i> Animal Details
+        </h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <h4 class="fw-bold text-primary mb-3">Animal Information</h4>
+
+            <dl class="row">
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.AnimalName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.AnimalName)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Species)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Species)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Age)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Age)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Habitat)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Habitat.HabitatName)
+                </dd>
+
+            </dl>
+
+            <div class="mt-4 d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model?.AnimalId" class="btn btn-warning text-white">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </a>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-list"></i> Back to List
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

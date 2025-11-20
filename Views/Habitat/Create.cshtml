@@ -1,0 +1,62 @@
+﻿@model PhamTheAnhKTPMK21B.Models.Habitat
+
+@{
+    ViewData["Title"] = "Create Habitat";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="bi bi-plus-circle"></i> Create New Habitat
+        </h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <h4 class="fw-bold text-secondary mb-3">Enter Habitat Information</h4>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="HabitatName" class="form-label fw-semibold"></label>
+                    <input asp-for="HabitatName" class="form-control shadow-sm" />
+                    <span asp-validation-for="HabitatName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Climate" class="form-label fw-semibold"></label>
+                    <input asp-for="Climate" class="form-control shadow-sm" />
+                    <span asp-validation-for="Climate" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Area" class="form-label fw-semibold"></label>
+                    <input asp-for="Area" class="form-control shadow-sm" />
+                    <span asp-validation-for="Area" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-save"></i> Create
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary px-4">Cancel</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

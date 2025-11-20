@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PhamTheAnhKTPMK21B.Models.Animal>
+
+@{
+    ViewData["Title"] = "Animal List";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold text-primary">Danh sách động vật</h2>
+        <a asp-action="Create" class="btn btn-success shadow-sm">
+            <i class="bi bi-plus-circle"></i> Create New
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover table-bordered align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.AnimalName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Species)</th>
+                        <th>@Html.DisplayNameFor(model => model.Age)</th>
+                        <th>@Html.DisplayNameFor(model => model.Habitat)</th>
+                        <th class="text-center" style="width: 160px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.AnimalName</td>
+                            <td>@item.Species</td>
+                            <td>@item.Age</td>
+                            <td>@item.Habitat?.HabitatName</td>
+
+                            <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@item.AnimalId"
+                                   class="badge bg-primary text-decoration-none px-2 py-1">
+                                    Edit
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.AnimalId"
+                                   class="badge bg-info text-dark text-decoration-none px-2 py-1">
+                                    Details
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.AnimalId"
+                                   class="badge bg-danger text-decoration-none px-2 py-1">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
