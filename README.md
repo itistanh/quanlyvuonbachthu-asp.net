@@ -56,6 +56,6 @@ The project uses **Entity Framework Core** to manage relationships:
     ```powershell
     Update-Database
     ```
-    *This will automatically create the 'ZooDb' and all tables based on the Models.*
+    *This will automatically create database and all tables based on the Models.*
 4.  **Run the Application**:
     Press **F5** in Visual Studio.
